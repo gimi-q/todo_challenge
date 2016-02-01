@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="toDoList">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/toDoListController.js"></script>
+  </head>
+
+  <body ng-controller="toDoListController as toDoListCtrl">
+    <h1>What Needs To Be Done?</h1>
+    <section>
+
+      <form>
+        <label for="newToDo">New ToDo:</label>
+        <input class="form-control" id="newToDo" ng-model="toDoListCtrl.addTask" type="text">
+        <input class="btn btn-primary submit" id="newTask" ng-click="toDoListCtrl.newTask()" type="submit" value="submit">
+      </form>
+    </section>
+    <ul class="list-group">
+      <li ng-repeat="task in toDoListCtrl.tasks">
+
+        <p>
+          <span><input type="checkbox" value=""></span>{{task}}
+          <span class="pull-right">
+            <button class="btn btn-xs btn-info" ng-click="this.value='Complete'">Active</button>
+            <button class="btn btn-xs btn-info">Edit</button>
+            <button class="btn btn-xs btn-warning" ng-click="toDoListCtrl.remove(item)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </span>
+        </p>
+      </li>
+    </ul>
+    <div></div>
+    <div class="btn-group">
+      <button class="btn btn-primary" type="button">All</button>
+      <button class="btn btn-primary" type="button">Active</button>
+      <button class="btn btn-primary" type="button">Complete</button>
+      <button class="btn btn-primary" type="button">Clear All</button>
+    </div>
+  </body>
+</html>
