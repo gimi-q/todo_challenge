@@ -2,7 +2,7 @@
 Todo Challenge Build Status
 A Todo list as a mini Angular.js front-end application (builded with a TDD approach).
 
-User Stories
+##User Stories
 
 As a forgetful person
 I want to store my tasks
@@ -31,7 +31,7 @@ Installation
 
 
 
-Testing
+##Testing
 
 To run tests:
 
@@ -43,7 +43,7 @@ To run unit tests:
 
 $ grunt karma
 
-Technologies
+##Technologies
 
 Node.js
 Angular.js
